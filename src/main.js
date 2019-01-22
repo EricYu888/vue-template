@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './store'
 import Cookies from 'js-cookie'
 import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
@@ -12,15 +13,17 @@ Vue.use(Element, {
   size: Cookies.get('size') || 'medium'
 })
 
-Object.keys(filters).forEach(key => {
-  Vue.filter(key, filters[key])
-})
+// Object.keys(filters).forEach(key => {
+//   Vue.filter(key, filters[key])
+// })
 
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
+
 new Vue({
   el: '#app',
   router,
-  render: h => (App)
+  store,
+  render: h => h(App)
 })

@@ -101,6 +101,7 @@ export default {
     }
   },
   created() {
+    alert(1)
   },
   destroyed() {
   },
